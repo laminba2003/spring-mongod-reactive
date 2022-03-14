@@ -1,7 +1,7 @@
 package com.spring.training.reactive.controller;
 
 import com.spring.training.reactive.model.User;
-import com.spring.training.reactive.repository.UserRepository;
+import com.spring.training.reactive.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,16 +15,16 @@ import reactor.core.publisher.Mono;
 @AllArgsConstructor
 public class UserController {
 
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     @GetMapping("{id}")
     public Mono<User> getUser(@PathVariable("id") String id) {
-        return userRepository.findById(id);
+        return userService.getUser(id);
     }
 
     @GetMapping
     public Flux<User> getUsers() {
-        return userRepository.findAll();
+        return userService.getUsers();
     }
 
 }
