@@ -28,6 +28,12 @@ When building a reactive application, we need it to be reactive all the way down
 
 Reactive applications implement an event-based model where data is pushed to the consumer. The consumer of data is called a subscriber, because it subscribes to the publisher, which publishes asynchronous streams of data.
 
+## Spring Reactor
+
+Spring Reactor is a reactive library for building non-blocking applications on the JVM based on the Reactive Streams Specification.
+It offers two types of publishers: Mono and Flux. Flux is a publisher that produces 0 to N values. Operations that return multiple elements use this type. Mono is a publisher that produces 0 to 1 value. It is used for operations that return a single element.
+In the following application, we use reactive programming with a MongoDB database.
+
 ## Start the mongodb container
 
 run this command to start all services in the correct order.
