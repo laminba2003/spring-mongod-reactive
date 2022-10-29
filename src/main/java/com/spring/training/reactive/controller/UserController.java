@@ -15,16 +15,16 @@ import reactor.core.publisher.Mono;
 @AllArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+    final UserService service;
 
     @GetMapping("{id}")
     public Mono<User> getUser(@PathVariable("id") String id) {
-        return userService.getUser(id);
+        return service.getUser(id);
     }
 
     @GetMapping
     public Flux<User> getUsers() {
-        return userService.getUsers();
+        return service.getUsers();
     }
 
 }

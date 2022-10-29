@@ -1,8 +1,11 @@
 server:
-    port: 9090
+  port: 9090
 spring:
-    data:
-        mongodb:
-          host: localhost
-          port: 27017
-          database: nest
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: root
+      password: password
+      authentication-database: admin
+      database: spring
