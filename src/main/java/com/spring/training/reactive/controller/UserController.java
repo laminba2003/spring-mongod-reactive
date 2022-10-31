@@ -4,6 +4,7 @@ import com.spring.training.reactive.model.User;
 import com.spring.training.reactive.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -20,7 +21,7 @@ public class UserController {
         return service.getUser(id);
     }
 
-    @GetMapping
+    @GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<User> getUsers() {
         return service.getUsers();
     }
